@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8987d483b7bfee13f765d75141008747",
+    "content-hash": "d2479e3909880a18cb37d618a5ab82aa",
     "packages": [],
     "packages-dev": [
         {
@@ -124,8 +124,14 @@
             "version": "1.1.1",
             "source": {
                 "type": "git",
-                "url": "https://gitlab.ins.risk.regn.net/UKI/shared/php/packages/lexide/pharmacist.git",
+                "url": "https://github.com/lexide/pharmacist.git",
                 "reference": "d90d8a0b4cfd2dbf8083e7a12deb0e1c5f0dd0f4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lexide/pharmacist/zipball/d90d8a0b4cfd2dbf8083e7a12deb0e1c5f0dd0f4",
+                "reference": "d90d8a0b4cfd2dbf8083e7a12deb0e1c5f0dd0f4",
+                "shasum": ""
             },
             "require": {
                 "ext-json": "*",
@@ -143,7 +149,7 @@
                     "Lexide\\Pharmacist\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.datahub.iil.co.uk/downloads/",
+            "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
                     "name": "Doug",
@@ -158,12 +164,12 @@
             "version": "2.2.4",
             "source": {
                 "type": "git",
-                "url": "https://gitlab.ins.risk.regn.net/UKI/shared/php/packages/lexide/syringe.git",
+                "url": "https://github.com/lexide/syringe.git",
                 "reference": "4f19c54c83bf018ce8cd32f909f198a2071e5adf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.ins.risk.regn.net/api/v4/projects/UKI%2Fshared%2Fphp%2Fpackages%2Flexide%2Fsyringe/repository/archive.zip?sha=4f19c54c83bf018ce8cd32f909f198a2071e5adf",
+                "url": "https://api.github.com/repos/lexide/syringe/zipball/4f19c54c83bf018ce8cd32f909f198a2071e5adf",
                 "reference": "4f19c54c83bf018ce8cd32f909f198a2071e5adf",
                 "shasum": ""
             },
@@ -191,7 +197,7 @@
                     "Lexide\\Syringe\\IntegrationTests\\": "tests/integration"
                 }
             },
-            "notification-url": "https://packagist.datahub.iil.co.uk/downloads/",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
