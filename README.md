@@ -38,11 +38,6 @@ There are a number of Provider classes supplied in this library:
 * `TimeProvider` - returns a unix timestamp in seconds 
 * `MilliTimeProvider`- returns a unix timestamp with millisecond precision
 * `MicroTimeProvider`- returns a unix timestamp with microsecond precision
-* `NanoTimeProvider` returns an arbitrary timestamp with nanosecond precision
-
-_NOTE: The `NanoTimeProvider` **does not** return a unix timestamp. It is based on the `hrtime` function which returns 
-nanoseconds elapsed from an arbitrary point-in-time, such as system start time. As this point-in-time cannot be known 
-beforehand, `NanoTimeProvider` cannot be used for date calculations_
 
 ### Custom TimeProviders
 

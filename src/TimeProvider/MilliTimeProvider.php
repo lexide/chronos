@@ -7,7 +7,7 @@ class MilliTimeProvider implements TimeProviderInterface
     /**
      * {@inheritDoc}
      */
-    public function get(): float|int
+    public function get()
     {
         return floor(microtime(true) / 1000);
     }

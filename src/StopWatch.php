@@ -26,7 +26,7 @@ class StopWatch
         $this->timeProvider = $timeProvider;
     }
 
-    public function start(): void
+    public function start()
     {
         $this->startTime = $this->timeProvider->get();
     }
@@ -34,16 +34,16 @@ class StopWatch
     /**
      * @return bool
      */
-    public function isRunning(): bool
+    public function isRunning()
     {
-        return isset($this->$this->startTime);
+        return isset($this->startTime);
     }
 
     /**
      * @return float|int
      * @throws StopWatchException
      */
-    public function duration(): int|float
+    public function duration()
     {
         if (empty($this->startTime)) {
             throw new StopWatchException("StopWatch must be started before calling duration");
@@ -56,7 +56,7 @@ class StopWatch
      * @return int|float
      * @throws StopWatchException
      */
-    public function stop(): int|float
+    public function stop()
     {
         $duration = $this->duration();
         $this->startTime = null;

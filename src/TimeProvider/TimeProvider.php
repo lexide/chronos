@@ -7,7 +7,7 @@ class TimeProvider implements TimeProviderInterface
     /**
      * {@inheritDoc}
      */
-    public function get(): float|int
+    public function get()
     {
         return time();
     }

@@ -7,5 +7,5 @@ interface TimeProviderInterface
     /**
      * @return float|int
      */
-    public function get(): float|int;
+    public function get();
 }

@@ -7,7 +7,7 @@ class MicroTimeProvider implements TimeProviderInterface
     /**
      * {@inheritDoc}
      */
-    public function get(): float|int
+    public function get()
     {
         return microtime(true);
     }
