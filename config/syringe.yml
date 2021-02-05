@@ -1,0 +1,21 @@
+services:
+
+  unix.timeProvider:
+    class: Lexide\Chronos\TimeProvider
+
+  milli.timeProvider:
+    class: Lexide\Chronos\MilliTimeProvider
+
+  micro.timeProvider:
+    class: Lexide\Chronos\MicroTimeProvider
+
+  nano.timeProvider:
+    class: Lexide\Chronos\NanoTimeProvider
+
+  default.timeProvider:
+    aliasOf: "@micro.timeProvider"
+
+  stopWatch:
+    class: Lexide\Chronos\StopWatch
+    arguments:
+      - "@default.timeProvider"
