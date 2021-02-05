@@ -1,16 +1,16 @@
 services:
 
   unix.timeProvider:
-    class: Lexide\Chronos\TimeProvider
+    class: Lexide\Chronos\TimeProvider\TimeProvider
 
   milli.timeProvider:
-    class: Lexide\Chronos\MilliTimeProvider
+    class: Lexide\Chronos\TimeProvider\MilliTimeProvider
 
   micro.timeProvider:
-    class: Lexide\Chronos\MicroTimeProvider
+    class: Lexide\Chronos\TimeProvider\MicroTimeProvider
 
   nano.timeProvider:
-    class: Lexide\Chronos\NanoTimeProvider
+    class: Lexide\Chronos\TimeProvider\NanoTimeProvider
 
   default.timeProvider:
     aliasOf: "@micro.timeProvider"
