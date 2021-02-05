@@ -2,7 +2,8 @@
     "name": "lexide/chronos",
     "description": "Provides classes that return timestamps",
     "type": "library",
-    "license": "proprietary",
+    "license": "MIT",
+    "homepage": "https://github.com/lexide/chronos",
     "authors": [
         {
             "name": "Danny Smart",
