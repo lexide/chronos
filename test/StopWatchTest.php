@@ -68,10 +68,11 @@ class StopWatchTest extends TestCase
 
         $stopWatch = new StopWatch($this->timeProvider);
         $stopWatch->start();
-        $this->assertSame($difference, $stopWatch->stop());
 
-        $this->expectException(StopWatchException::class);
-        $stopWatch->duration();
+        $this->assertTrue($stopWatch->isRunning());
+        $this->assertSame($difference, $stopWatch->stop());
+        $this->assertFalse($stopWatch->isRunning());
+
     }
 
 }

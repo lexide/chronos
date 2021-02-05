@@ -36,7 +36,7 @@ class StopWatch
      */
     public function isRunning(): bool
     {
-        return isset($this->$this->startTime);
+        return isset($this->startTime);
     }
 
     /**
