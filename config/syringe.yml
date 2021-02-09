@@ -15,7 +15,7 @@ services:
   default.timeProvider:
     aliasOf: "@micro.timeProvider"
 
-  stopWatch:
-    class: Lexide\Chronos\StopWatch
+  stopWatch.factory:
+    class: Lexide\Chronos\StopWatchFactory
     arguments:
       - "@default.timeProvider"
