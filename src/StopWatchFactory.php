@@ -10,7 +10,7 @@ class StopWatchFactory
     /**
      * @var TimeProviderInterface
      */
-    protected TimeProviderInterface $timeProvider;
+    protected $timeProvider;
 
     /**
      * @param TimeProviderInterface $timeProvider
