@@ -23,28 +23,15 @@ class StopWatchTest extends TestCase
         $this->timeProvider = \Mockery::mock(TimeProviderInterface::class);
     }
 
-    public function testExceptionIfNotStarted()
+    public function testZeroIfNotStarted()
     {
 
         $this->timeProvider->shouldNotReceive("get");
 
-        $messagePattern = "/must be started/";
-
         $stopWatch = new StopWatch($this->timeProvider);
 
-        try {
-            $stopWatch->duration();
-            $this->fail("Should not have been able to call duration() when the watch is stopped");
-        } catch (StopWatchException $e) {
-            $this->assertMatchesRegularExpression($messagePattern, $e->getMessage());
-        }
-
-        try {
-            $stopWatch->stop();
-            $this->fail("Should not have been able to call stop() when the watch is stopped");
-        } catch (StopWatchException $e) {
-            $this->assertMatchesRegularExpression($messagePattern, $e->getMessage());
-        }
+        $this->assertSame(0, $stopWatch->duration());
+        $this->assertSame(0, $stopWatch->stop());
     }
 
     public function testReturnsTimeDifference()
@@ -72,6 +59,28 @@ class StopWatchTest extends TestCase
         $this->assertTrue($stopWatch->isRunning());
         $this->assertSame($difference, $stopWatch->stop());
         $this->assertFalse($stopWatch->isRunning());
+
+    }
+
+    public function testIntervalMode()
+    {
+        $start = 10;
+        $intervals = [3, 17, 7, 12];
+        $times = [$start];
+        $running = $start;
+        foreach ($intervals as $interval) {
+            $running += $interval;
+            $times[] = $running;
+        }
+
+        $this->timeProvider->shouldReceive("get")->andReturnValues($times);
+
+        $stopWatch = new StopWatch($this->timeProvider, true);
+        $stopWatch->start();
+
+        foreach ($intervals as $interval) {
+            $this->assertSame($interval, $stopWatch->duration());
+        }
 
     }
 
