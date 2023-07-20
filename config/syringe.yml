@@ -15,6 +15,21 @@ services:
   default.timeProvider:
     aliasOf: "@micro.timeProvider"
 
+  unit.timeSkipper:
+    class: Lexide\Chronos\TimeSkipper\TimeSkipper
+
+  milli.timeSkipper:
+    class: Lexide\Chronos\TimeSkipper\MilliTimeSkipper
+
+  micro.timeSkipper:
+    class: Lexide\Chronos\TimeSkipper\MicroTimeSkipper
+
+  nano.timeSkipper:
+    class: Lexide\Chronos\TimeSkipper\NanoTimeSkipper
+
+  default.timeSkipper:
+    aliasOf: "@micro.timeSkipper"
+
   stopWatch.factory:
     class: Lexide\Chronos\StopWatchFactory
     arguments:
