@@ -2,21 +2,19 @@
 
 namespace Lexide\Chronos;
 
-use Lexide\Chronos\Exception\StopWatchException;
 use Lexide\Chronos\TimeProvider\TimeProviderInterface;
 
-class StopWatch
+class MultiStopWatch
 {
-
     /**
      * @var TimeProviderInterface
      */
     protected $timeProvider;
 
     /**
-     * @var int|float
+     * @var int[]|float[]
      */
-    protected $startTime;
+    protected $startTimes;
 
     /**
      * @var bool
@@ -33,43 +31,49 @@ class StopWatch
         $this->intervalMode = $intervalMode;
     }
 
-    public function start(): void
+    /**
+     * @param string $key
+     */
+    public function start(string $key): void
     {
-        $this->startTime = $this->timeProvider->get();
+        $this->startTimes[$key] = $this->timeProvider->get();
     }
 
     /**
+     * @param string $key
      * @return bool
      */
-    public function isRunning(): bool
+    public function isRunning(string $key): bool
     {
-        return isset($this->startTime);
+        return isset($this->startTimes[$key]);
     }
 
     /**
+     * @param string $key
      * @return float|int
      */
-    public function duration(): int|float
+    public function duration(string $key): int|float
     {
-        if (empty($this->startTime)) {
+        if (empty($this->startTimes[$key])) {
             return 0;
         }
+
         $time = $this->timeProvider->get();
-        $difference = $time - $this->startTime;
+        $difference = $time - $this->startTimes[$key];
         if ($this->intervalMode) {
-            $this->startTime = $time;
+            $this->startTimes[$key] = $time;
         }
         return $difference;
     }
 
     /**
+     * @param string $key
      * @return int|float
      */
-    public function stop(): int|float
+    public function stop(string $key): int|float
     {
-        $duration = $this->duration();
-        $this->startTime = null;
+        $duration = $this->duration($key);
+        unset($this->startTimes[$key]);
         return $duration;
     }
-
 }
