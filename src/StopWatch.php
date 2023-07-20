@@ -33,6 +33,14 @@ class StopWatch
         $this->intervalMode = $intervalMode;
     }
 
+    /**
+     * @param bool $intervalMode
+     */
+    public function setIntervalMode(bool $intervalMode): void
+    {
+        $this->intervalMode = $intervalMode;
+    }
+
     public function start(): void
     {
         $this->startTime = $this->timeProvider->get();

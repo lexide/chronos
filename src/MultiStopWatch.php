@@ -32,6 +32,14 @@ class MultiStopWatch
     }
 
     /**
+     * @param bool $intervalMode
+     */
+    public function setIntervalMode(bool $intervalMode): void
+    {
+        $this->intervalMode = $intervalMode;
+    }
+
+    /**
      * @param string $key
      */
     public function start(string $key): void
